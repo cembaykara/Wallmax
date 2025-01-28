@@ -280,13 +280,13 @@ This structure ensures that each view focuses solely on presentation, while the 
 ##### App Diagram
 
 <div style="display: flex; justify-content: space-around;">
-  <img src="Wallmax/diagrams/AppDiagram.png" alt="AppDiagram" style="width: 40%; border-radius: 8px;"/>
+  <img src="diagrams/AppDiagram.png" alt="AppDiagram" style="width: 40%; border-radius: 8px;"/>
   </div>
 
 ##### Flow Diagram
 
 <div style="display: flex; justify-content: space-around;">
-  <img src="Wallmax/diagrams/AppFlow.png" alt="AppFlow" style="width: 80%; border-radius: 8px;"/>
+  <img src="diagrams/AppFlow.png" alt="AppFlow" style="width: 80%; border-radius: 8px;"/>
   </div>
 
 ###### NOTE:
