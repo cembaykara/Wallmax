@@ -3,9 +3,9 @@
 A Swift application that demonstrates clean architecture principles and a flexible networking layer for interacting with movie databases like TMDB and IMDB.
 
 <div style="display: flex; justify-content: space-around;">
-  <img src="Wallmax/diagrams/screenshot1.png" alt="Screenshot 1" style="width: 30%; border-radius: 8px;"/>
-  <img src="Wallmax/diagrams/screenshot2.png" alt="Screenshot 2" style="width: 30%; border-radius: 8px;"/>
-  <img src="Wallmax/diagrams/screenshot3.png" alt="Screenshot 3" style="width: 30%; border-radius: 8px;"/>
+  <img src="diagrams/screenshot1.png" alt="Screenshot 1" style="width: 30%; border-radius: 8px;"/>
+  <img src="diagrams/screenshot2.png" alt="Screenshot 2" style="width: 30%; border-radius: 8px;"/>
+  <img src="diagrams/screenshot3.png" alt="Screenshot 3" style="width: 30%; border-radius: 8px;"/>
 </div>
 
 ## Disclaimer
@@ -121,8 +121,7 @@ protocol Endpoint {
 ```
 
 ###### Usage
-Here isthe implementation of MoviesEndpoint using the Endpoint protocol.
-The builtin static extensions methods are then called directly on the Endpoint:
+Here is the implementation of MoviesEndpoint using the Endpoint protocol.
 
 ```swift
 enum MoviesEndpoint: Endpoint {
@@ -144,7 +143,7 @@ enum MoviesEndpoint: Endpoint {
 }
 ```
 
-The builtin static extensions methods are then called directly on the Endpoint.
+The builtin static extension methods are then called directly on the Endpoint.
 
 ###### For example:
 
@@ -257,6 +256,14 @@ Dependency injection is used to maintain a clear separation of concerns and faci
    - Acts as the central source of truth for the app's state and business logic.
    - Injected into the environment using the `environment` modifier in `MainView`.
    - Child views access the view model via the `@Environment` property wrapper, enabling consistent and centralized data sharing.
+   - Keeps track of errors thrown from deep down and bubbles them up to the view by utilizing `peekDialog`
+
+     - PeekDialog is a highly customizable notification style banner that supports additional features like visibility delay, swipe to dismiss, buttons, localizations and different states.
+
+   <div style="text-align: center;">
+    <img src="diagrams/screenshot4.png" alt="Screenshot 1" style="width: 50%; border-radius: 8px; margin: auto; display: block;"/>
+  </div>
+
 
 2. **Repositories**
    - The `MainViewModel` depends on repositories like `SwiftDataRepository` for data persistence.
@@ -273,13 +280,13 @@ This structure ensures that each view focuses solely on presentation, while the 
 ##### App Diagram
 
 <div style="display: flex; justify-content: space-around;">
-  <img src="Wallmax/diagrams/AppDiagram.png" alt="Screenshot 1" style="width: 40%; border-radius: 8px;"/>
+  <img src="Wallmax/diagrams/AppDiagram.png" alt="AppDiagram" style="width: 40%; border-radius: 8px;"/>
   </div>
 
 ##### Flow Diagram
 
 <div style="display: flex; justify-content: space-around;">
-  <img src="Wallmax/diagrams/AppFlow.png" alt="Screenshot 1" style="width: 80%; border-radius: 8px;"/>
+  <img src="Wallmax/diagrams/AppFlow.png" alt="AppFlow" style="width: 80%; border-radius: 8px;"/>
   </div>
 
 ###### NOTE:

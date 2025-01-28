@@ -124,6 +124,7 @@
 		914767402D485CE0009F9E55 /* Wallmax.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wallmax.entitlements; sourceTree = "<group>"; };
 		914767412D485CE0009F9E55 /* WallmaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallmaxApp.swift; sourceTree = "<group>"; };
 		91693B3C2D3C31C400933B7F /* Wallmax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallmax.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9196BF712D49929900F3009B /* screenshot4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot4.png; sourceTree = "<group>"; };
 		91C25E552D48726F0052981B /* ReleaseDateIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseDateIndicator.swift; sourceTree = "<group>"; };
 		91C25E5B2D4900030052981B /* PeekDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekDialog.swift; sourceTree = "<group>"; };
 		91C25E5D2D4900F20052981B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -360,7 +361,6 @@
 				9147673D2D485CE0009F9E55 /* Uilities */,
 				91C25E5A2D48FFA20052981B /* Resources */,
 				914767022D485CE0009F9E55 /* Preview Content */,
-				91C25E692D494B570052981B /* diagrams */,
 			);
 			path = Wallmax;
 			sourceTree = "<group>";
@@ -378,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				914767422D485CE0009F9E55 /* Wallmax */,
+				91C25E692D494B570052981B /* diagrams */,
 				91E7D6EB2D48705100E46605 /* WallmaxTests */,
 				91693B3D2D3C31C400933B7F /* Products */,
 			);
@@ -410,6 +411,7 @@
 				91F6BA4D2D49815900297D4B /* screenshot1.png */,
 				91F6BA4F2D49824100297D4B /* screenshot2.png */,
 				91F6BA512D49826C00297D4B /* screenshot3.png */,
+				9196BF712D49929900F3009B /* screenshot4.png */,
 			);
 			path = diagrams;
 			sourceTree = "<group>";
