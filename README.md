@@ -9,21 +9,23 @@ A Swift application that demonstrates clean architecture principles and a flexib
 </div>
 
 ## Disclaimer
-This project was developed as part of a take-home assignment. While it fulfills all specified requirements of the assignment, it also includes additional features and concepts aimed at future-proofing the application or demonstrating ideas and principles I think is worth exploring further. To maintain readability and focus, this README does not cover every minor or mahor detail of the implementation. If you have any questions or require further clarification about specific aspects of the code, decisions feel free to reach out to me directly.
+This project was developed as part of a take-home assignment. While it fulfills all specified requirements of the assignment, it also includes additional features and concepts aimed at future-proofing the application or demonstrating ideas and principles I think is worth exploring further. To maintain readability and focus, this README does not cover every minor or major detail of the implementation. If you have any questions or require further clarification about specific aspects of the code, decisions feel free to reach out to me directly.
 
 ## Setup
-Wallmax uses environment variables for API keys and some host strings.
-In order to build it, you need to add these to your project.
+  Wallmax uses environment variables for API keys and some host strings.
+  In order to build it, you need to add these to your project.
 
-### Adding Environment Variables
-To be able to make request to the TMDB servers, you'll need and **API Key**. - This is your read token or your bearer token. You can obtain this by signing up with TMDB [here](https://developer.themoviedb.org).
+  ### Adding Environment Variables
+  To be able to make requests to the TMDB servers, you'll need and **API Key**. - This is your read token or sometimes called your bearer token. You can obtain this by signing up with TMDB [here](https://developer.themoviedb.org).
 
-In order to add this you will have to navigate to **Product -> Scheme -> Edit Scheme...** and select the **Arguments** tab. Here you can add values with your credentials.
-Make sure your environment key is **TMDB_API_KEY**.
+  To add this, navigate to **Product -> Scheme -> Edit Scheme...**, then select the **Arguments** tab. Here, you can enter values with your credentials. Make sure that your environment key name is set to `TMDB_API_KEY`.
 
-###### Important: 
-This will prevent you from running the app without xcode. The environment values are not part of the app.
-If you want to you can also set the apiKey in TMDBCLient directly. This will allow you to run the app without having to run it with xcode.
+  <div style="display: flex; justify-content: space-around;">
+    <img src="diagrams/screenshot5.png" alt="Screenshot 1" style="width: 70%; border-radius: 8px;"/>
+  </div>
+
+  ###### Important: 
+  This setup prevents you from running the app without Xcode, as environment values are not included in the app. Alternatively, you can set the `apiKey` directly in `TMDBClient`, allowing you to run the app without relying on Xcode.
 
 ## Architecture
 
