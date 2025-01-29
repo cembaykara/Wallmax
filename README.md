@@ -145,7 +145,7 @@ enum MoviesEndpoint: Endpoint {
 }
 ```
 
-The builtin static extension methods are then called directly on the Endpoint.
+The built-in static extension methods are then called directly on the Endpoint.
 
 ###### For example:
 
@@ -155,7 +155,8 @@ The builtin static extension methods are then called directly on the Endpoint.
     let mostPopular = try await movieService.getMovies(.mostPopular)
 ```
 
-We can also use the EndpointOptions protocol to provide easy query building:
+##### Query Parameters
+The `EndpointOptions` protocol provides a convenient way to build query parameters effortlessly.
 
 ###### Endpoint Options Protocol
 
@@ -165,10 +166,8 @@ protocol EndpointParameter {
 	func makeQueryItem() -> URLQueryItem
 }
 ```
+###### Implementation
 
-To simply use it we can provide the options on the builtin `func url(with parameters: [any EndpointParameter]? = nil)`.
-
-###### Exmple usage:
 ```swift
     enum MoviesOptions {
 	
@@ -192,30 +191,33 @@ extension MoviesOptions: EndpointParameter {
 		}
 	}
 }
+```
 
-/// USAGE:
+To use it easily, pass the options to the built-in `func url(with parameters: [any EndpointParameter]? = nil)` directly on the endpoint.
+
+###### Exmple usage:
+```swift
     let url = MoviesEndpoint.topRated.url(with: [.page(2), .language(en-UK)])
 ```
 
 #### Session
 
-So far, we've explored how to create an APIClient and construct URLs using the Endpoint protocol. This setup ensures a structured and reusable approach to handling network requests.
+  So far, we've explored how to create an `APIClient` and construct URLs using the `Endpoint` protocol. This setup ensures a structured and reusable approach to handling network requests.
 
-The network layer relies on the Session actor, which acts as a wrapper around the built-in URLSession. It simplifies interceptor and retry logic. These features won't be discussed in further detail here.
+  The network layer relies on the `Session` actor, which acts as a wrapper around the Apple's `URLSession`. It simplifies intercepting and retry logic. These features won't be discussed in further detail here.
 
-###### Note: 
-*Some features in the session actor have been simplified or are not actively used in this project. They are included primarily for demonstration purposes. If you have questions about specific design choices, feel free to ask.*
+  ```swift
+  /// Example usage of Session
+      let response = try await Session.performHttp(request)
+                                  .decode(as: MoviesResponse.self)
+  ```
 
-
-```swift
-/// Example usage of Session
-    let response = try await Session.performHttp(request)
-                                .decode(as: MoviesResponse.self)
-```
+  ###### Note: 
+  *Some features in the session actor have been simplified or are not actively used in this project. They are included primarily for demonstration purposes. If you have questions about specific design choices, feel free to ask.*
 
 #### Persistence and Offline Storage
 
-The app uses SwiftData for persistent storage with a clean repository abstraction:
+The app utilizes **SwiftData** for persistent storage, incorporating a clean repository abstraction. However, it can be easily replaced with other solutions like **Realm**, if needed.
 
 - **SwiftData Integration**: Core data layer using `ModelContainer` and `ModelContext`
 - **Repository Pattern**: `RepositoryProtocol` provides a clean, databse agnostic interface for CRUD operations
@@ -223,7 +225,6 @@ The app uses SwiftData for persistent storage with a clean repository abstractio
 - **Image Caching**: Movie posters are stored locally using `MovieImages` entity
 
 Given the app's small scale and simplicity, the data fetched for movies is limited to the most popular and top-rated categories. These collections are relatively small and can be efficiently managed within a SwiftData container. However, images are handled differently—they are cached separately as they are displayed. During movie searches, the app only caches larger images for detail views, avoiding storage of smaller images.
-
 
 ## View Hierarchy and Dependency Injection
 
